@@ -1,4 +1,5 @@
 ---
+import Navbar from '../components/Navbar.astro';
 export interface Props {
 	title: string;
 }
@@ -16,20 +17,44 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<Navbar/>
 		<slot />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+html {  
+	box-sizing: border-box;   
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+*, *::before, *::after {  
+	box-sizing: inherit;
+	text-decoration: none;
+	margin: 0;  
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+body {
+	font-size: 1.6rem;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+li {
+	list-style-type: none;
+}
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+  margin: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}	
 </style>
